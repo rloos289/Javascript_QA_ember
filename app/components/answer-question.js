@@ -1,7 +1,6 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  // showDetails: false,
   actions: {
     switchToUpdate(question) {
       this.sendAction('switchToUpdate', question);

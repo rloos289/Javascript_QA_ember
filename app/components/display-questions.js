@@ -11,16 +11,16 @@ export default Ember.Component.extend({
     },
     //manage updates
     switchToUpdate(question) {
-      this.set('switchToUpdate', true);
+      this.toggleProperty('switchToUpdate');
       this.set('currentQuestion', question);
     },
     updateQuestion(params) {
       this.sendAction('updateQuestion', this.currentQuestion, params);
-      this.set('showUpdateComment', false);
+      this.set('switchToUpdate', false);
     },
     //manage answers
     toggleAnswer(question) {
-      this.set('toggleAnswer', true);
+      this.toggleProperty('toggleAnswer');
       this.set('currentQuestion', question);
     },
     addAnswer(params) {
