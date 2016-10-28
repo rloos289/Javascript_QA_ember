@@ -1,19 +1,15 @@
 {
-  "Questions" : {
-    "Question1" : {
-      "question" : "What is the airspeed velocity of an unladen swallow?",
-      "author" : "Monty",
-      "comment" : "African or European?"
-    },
-    "Question2" : {
-      "question" : "Do ya feel lucky punk? Well do yah?",
-      "author" : "Clint",
-      "comment" : "Imma shoot you"
-    },
-    "Question3" : {
-      "question" : "Aren't you a little short for a stormtrooper?",
-      "author" : "Leah",
-      "comment" : "I ain't no stormtrooper"
-    }
-  }
+   "questions": [{
+    "question": "What is the airspeed velocity of an unladen swallow?",
+    "author": "Monty",
+    "comment": "African or European?"
+  }, {
+    "question": "Do ya feel lucky punk? Well do yah?",
+    "author": "Clint",
+    "comment": "Imma shoot you"
+  }, {
+    "question": "Aren't you a little short for a stormtrooper?",
+    "author": "Leah",
+    "comment": "I ain't no stormtrooper"
+  }]
 }
