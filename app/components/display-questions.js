@@ -30,7 +30,15 @@ export default Ember.Component.extend({
     },
     //delete
     deleteAnswer(answer) {
-      this.sendAction('deleteAnswer', answer)
+      this.sendAction('deleteAnswer', answer);
+    },
+    deleteQuestion(question) {
+      var answer_deletions = question.get('answers').map(function(comment) {
+        return comment.destroyRecord();
+      });
+      Ember.RSVP.all(answer_deletions).then(function() {
+        return question.destroyRecord();
+      });
     }
   }
 });
