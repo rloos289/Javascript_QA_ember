@@ -1,6 +1,10 @@
 <div class="col-md-6">
-  {{answer-question model=model}}
+  {{answer-question model=model switchToUpdate='switchToUpdate'}}
 </div>
 <div class="col-md-6">
-  {{add-question saveQuestion='saveQuestion'}}
+  {{#if switchToUpdate}}
+    {{update-question currentQuestion=currentQuestion }}
+  {{else}}
+    {{add-question saveQuestion='saveQuestion'}}
+  {{/if}}
 </div>
