@@ -1,4 +1,6 @@
-{{#each model as |question|}}
-  <p>{{question.question}}</p>
-  <p>{{question.author}}</p>
-{{/each}}
+<div class="col-md-6">
+  {{answer-question model=model}}
+</div>
+<div class="col-md-6">
+  {{add-question}}
+</div>
