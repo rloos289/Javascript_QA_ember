@@ -3,6 +3,6 @@
   <p>Author: {{question.author}}</p>
   <button class='btn' {{action 'switchToUpdate' question}}>Update</button>
   <hr>
-  {{answer-tile question=question answers=answers toggleAnswer='toggleAnswer'}}
+  {{answer-tile question=question answers=answers toggleAnswer='toggleAnswer' deleteAnswer='deleteAnswer'}}
   <p>------------------------------------------------------------------------</p>
 {{/each}}

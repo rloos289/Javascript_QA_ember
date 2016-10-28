@@ -7,6 +7,9 @@ export default Ember.Component.extend({
     },
     toggleAnswer(question) {
       this.sendAction('toggleAnswer', question);
+    },
+    deleteAnswer(answer) {
+      this.sendAction('deleteAnswer', answer)
     }
   }
 });

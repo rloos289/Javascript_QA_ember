@@ -1,6 +1,8 @@
 <p>Comment: {{question.comment}}</p>
 {{#each question.answers as |answer|}}
-<p>{{answer.answer}}</p>
-<p>{{answer.author}}</p>
+<p>Answer: {{answer.answer}}</p>
+<p>Author: {{answer.author}}</p>
+<button class='btn' {{action 'deleteAnswer' answer}}>Delete Answer</button>
+<p>_______________________________________________________</p>
 {{/each}}
 <button class='btn' {{action 'toggleAnswer' question}}>Answer Question</button>

@@ -27,6 +27,10 @@ export default Ember.Component.extend({
       // this.set('currentAnswer', answer);
       this.sendAction('addAnswer', this.currentQuestion, params);
       this.set('toggleAnswer', false);
+    },
+    //delete
+    deleteAnswer(answer) {
+      this.sendAction('deleteAnswer', answer)
     }
   }
 });
