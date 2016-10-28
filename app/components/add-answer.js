@@ -4,11 +4,11 @@ export default Ember.Component.extend({
   actions: {
     addAnswer(params) {
        params = {
-        question: this.get('question'),
+        answer: this.get('answer'),
         author: this.get('author'),
       };
-      this.sendAction('updateQuestion', params);
-      this.set('question', '');
+      this.sendAction('addAnswer', params);
+      this.set('answer', '');
       this.set('author', '');
     }
   }

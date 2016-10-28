@@ -5,8 +5,8 @@ export default Ember.Component.extend({
     switchToUpdate(question) {
       this.sendAction('switchToUpdate', question);
     },
-    toggleAnswer(answer) {
-      this.sendAction('toggleAnswer', answer);
+    toggleAnswer(question) {
+      this.sendAction('toggleAnswer', question);
     }
   }
 });

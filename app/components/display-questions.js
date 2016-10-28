@@ -11,7 +11,6 @@ export default Ember.Component.extend({
     },
     //manage updates
     switchToUpdate(question) {
-      console.log('3');
       this.set('switchToUpdate', true);
       this.set('currentQuestion', question);
     },
@@ -20,9 +19,14 @@ export default Ember.Component.extend({
       this.set('showUpdateComment', false);
     },
     //manage answers
-    toggleAnswer(answer) {
+    toggleAnswer(question) {
       this.set('toggleAnswer', true);
-      this.set('currentAnswer', answer);
+      this.set('currentQuestion', question);
+    },
+    addAnswer(params) {
+      // this.set('currentAnswer', answer);
+      this.sendAction('addAnswer', this.currentQuestion, params);
+      this.set('toggleAnswer', false);
     }
   }
 });

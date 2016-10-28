@@ -2,12 +2,10 @@
   {{answer-question model=model switchToUpdate='switchToUpdate' toggleAnswer='toggleAnswer'}}
 </div>
 <div class="col-md-6">
-  {{!-- {{#if switchToUpdate}}
-    {{update-question currentQuestion=currentQuestion updateQuestion='updateQuestion'}} --}}
-
-    {{!-- if test works, template works, toggleAnswer does not --}}
-  {{#if toggleAnswer}}
-    {{add-answer}}
+  {{#if switchToUpdate}}
+    {{update-question currentQuestion=currentQuestion updateQuestion='updateQuestion'}}
+  {{else if toggleAnswer}}
+    {{add-answer addAnswer='addAnswer'}}
   {{else}}
     {{add-question saveQuestion='saveQuestion'}}
   {{/if}}

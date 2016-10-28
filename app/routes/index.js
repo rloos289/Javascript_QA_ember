@@ -2,8 +2,11 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model(){
-    return this.store.findAll('question');
-  },
+    return Ember.RSVP.hash({
+    question: this.store.findAll('question'),
+    answers: this.store.findAll('answer'),
+  });
+},
   actions: {
     saveQuestion(params) {
       var newQuestion = this.store.createRecord('question', params);
@@ -18,6 +21,24 @@ export default Ember.Route.extend({
       });
       question.save();
       this.transitionTo('index');
+    },
+    addAnswer(question, params) {
+      var newAnswer = this.store.createRecord('answer', params);
+      question.get('answers').addObject(newAnswer);
+      newAnswer.save().then(function() {
+        return question.save();
+      });
+      this.transitionTo('index');
     }
   }
 });
+
+// saveReview(params) {
+//   var newReview = this.store.createRecord('review', params);
+//   var rental = params.rental;
+//   rental.get('reviews').addObject(newReview);
+//   newReview.save().then(function() {
+//     return rental.save();
+//   });
+//   this.transitionTo('rental', rental);
+// }
