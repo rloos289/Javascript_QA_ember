@@ -9,9 +9,6 @@ export default Ember.Component.extend({
         comment: this.get('comment')
       };
       this.sendAction('updateQuestion', params);
-      this.set('question', '');
-      this.set('author', '');
-      this.set('comment', '');
     }
   }
 });

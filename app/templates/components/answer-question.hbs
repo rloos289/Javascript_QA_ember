@@ -1,4 +1,4 @@
-{{#each model as |question|}}
+{{#each questions as |question|}}
   <p>Question: {{question.question}}</p>
   <p>Author: {{question.author}}</p>
   <button class='btn' {{action 'switchToUpdate' question}}>Update</button>
