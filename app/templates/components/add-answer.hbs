@@ -1,0 +1,14 @@
+<div class="col-md-6">
+  <h2>Add an answer</h2>
+  <form class="newanswer">
+    <div class="form-group">
+      <label for="answer">Answer</label>
+      {{input class="form-control" value=answer id="answer"}}
+    </div>
+    <div class="form-group">
+      <label for="author">Author</label>
+      {{input class="form-control" value=author id="author"}}
+    </div>
+    <button class="btn" {{action 'saveAnswer'}}>Save</button>
+  </form>
+</div>
