@@ -1,2 +1,6 @@
 <p>Comment: {{question.comment}}</p>
+{{#each question.answers as |answer|}}
+<p>{{answer.answer}}</p>
+<p>{{answer.author}}</p>
+{{/each}}
 <button class='btn' {{action 'toggleAnswer' question}}>Answer Question</button>
