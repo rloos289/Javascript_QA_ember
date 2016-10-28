@@ -1,0 +1,11 @@
+<div class="question">
+  <p {{action 'showDetails' question}} >Question: {{question.question}}</p>
+  <p>Author: {{question.author}}</p>
+  <button class='btn' {{action 'switchToUpdate' question}}>Update</button>
+  <button class='btn' {{action 'deleteQuestion' question}}>Delete</button>
+  {{#if showDetails}}
+  <hr>
+  {{answer-tile question=question answers=answers toggleAnswer='toggleAnswer' deleteAnswer='deleteAnswer'}}
+  <p>------------------------------------------------------------------------</p>
+  {{/if}}
+</div>
