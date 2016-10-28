@@ -10,6 +10,10 @@ export default Ember.Component.extend({
     switchToUpdate(question) {
       this.set('switchToUpdate', true);
       this.set('currentQuestion', question);
+    },
+    updateQuestion(params) {
+      this.sendAction('updateQuestion', this.currentQuestion, params);
+      this.set('showUpdateComment', false);
     }
   }
 });

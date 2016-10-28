@@ -3,7 +3,7 @@
 </div>
 <div class="col-md-6">
   {{#if switchToUpdate}}
-    {{update-question currentQuestion=currentQuestion }}
+    {{update-question currentQuestion=currentQuestion updateQuestion='updateQuestion'}}
   {{else}}
     {{add-question saveQuestion='saveQuestion'}}
   {{/if}}
