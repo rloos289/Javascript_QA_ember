@@ -1,0 +1,15 @@
+<div class="container">
+  <header>
+    {{#link-to 'index'}}<h1 class="pagetitle">Q n A</h1>{{/link-to}}
+    <nav class="navbar navbar-inverse">
+      <ul class="nav navbar-nav">
+        <li>{{#link-to 'index'}}Home{{/link-to}}</li>
+        {{!-- <li>{{#link-to 'admin'}}Admin{{/link-to}}</li> --}}
+      </ul>
+    </nav>
+  </header>
+  {{outlet}}
+  <footer>
+    <p>Do ya feel lucky?</p>
+  </footer>
+</div>
