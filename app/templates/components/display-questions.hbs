@@ -1,13 +1,15 @@
-<div class="col-md-6">
-  <h2>Questions</h2>
-  {{answer-question questions=questions answers=answers switchToUpdate='switchToUpdate' toggleAnswer='toggleAnswer' deleteAnswer='deleteAnswer' deleteQuestion='deleteQuestion'}}
-</div>
-<div class="col-md-6">
-  {{#if switchToUpdate}}
-    {{update-question currentQuestion=currentQuestion updateQuestion='updateQuestion'}}
-  {{else if toggleAnswer}}
-    {{add-answer addAnswer='addAnswer'}}
-  {{else}}
-    {{add-question saveQuestion='saveQuestion'}}
-  {{/if}}
+<div class="row">
+  <div class="col-md-6">
+    <h2>Questions</h2>
+    {{answer-question questions=questions answers=answers switchToUpdate='switchToUpdate' toggleAnswer='toggleAnswer' deleteAnswer='deleteAnswer' deleteQuestion='deleteQuestion'}}
+  </div>
+  <div class="col-md-6">
+    {{#if switchToUpdate}}
+      {{update-question currentQuestion=currentQuestion updateQuestion='updateQuestion'}}
+    {{else if toggleAnswer}}
+      {{add-answer addAnswer='addAnswer'}}
+    {{else}}
+      {{add-question saveQuestion='saveQuestion'}}
+    {{/if}}
+  </div>
 </div>

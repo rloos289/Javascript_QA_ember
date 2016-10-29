@@ -1,3 +1,10 @@
-.pagetitle {
-  text-align: center;
+body {
+  font-family: 'Josefin Slab', serif;
+  .pagetitle {
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+  }
+  #disclaimer {
+    text-align: right;
+  }
 }
