@@ -21,6 +21,8 @@ You will need the following things properly installed on your computer.
 * `bower install`
 * `ember install ember-bootstrap`
 * `ember install emberfire`
+* `ember install ember-cli-sass`
+* `ember install ember-bootstrap`
 
 
 ## Running / Development

@@ -13,6 +13,7 @@ export default Ember.Component.extend({
     switchToUpdate(question) {
       this.toggleProperty('switchToUpdate');
       this.set('currentQuestion', question);
+      this.set('toggleAnswer', false);
     },
     updateQuestion(params) {
       this.sendAction('updateQuestion', this.currentQuestion, params);
@@ -22,6 +23,7 @@ export default Ember.Component.extend({
     toggleAnswer(question) {
       this.toggleProperty('toggleAnswer');
       this.set('currentQuestion', question);
+      this.set('switchToUpdate', false);
     },
     addAnswer(params) {
       // this.set('currentAnswer', answer);
