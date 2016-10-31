@@ -2,28 +2,31 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   currentQuestion: null,
-  switchToUpdate: false,
-  currentAnswer: null,
+  toggleUpdate: false,
   toggleAnswer: false,
   actions: {
+    newQuestion(){
+      this.set('toggleAnswer', false);
+      this.set('toggleUpdate', false);
+    },
     saveQuestion(params) {
       this.sendAction('saveQuestion', params);
     },
     //manage updates
-    switchToUpdate(question) {
-      this.toggleProperty('switchToUpdate');
+    toggleUpdate(question) {
+      this.toggleProperty('toggleUpdate');
       this.set('currentQuestion', question);
       this.set('toggleAnswer', false);
     },
     updateQuestion(params) {
       this.sendAction('updateQuestion', this.currentQuestion, params);
-      this.set('switchToUpdate', false);
+      this.set('toggleUpdate', false);
     },
     //manage answers
     toggleAnswer(question) {
       this.toggleProperty('toggleAnswer');
       this.set('currentQuestion', question);
-      this.set('switchToUpdate', false);
+      this.set('toggleUpdate', false);
     },
     addAnswer(params) {
       // this.set('currentAnswer', answer);

@@ -1,10 +1,17 @@
-<div class="question" {{action 'showDetails' question}}>
-  <p>Question: {{question.question}}</p>
-  <p>Asked By: {{question.author}}</p>
+<div class='row question'>
+  <div class="col-md-4">
+    <button class='btn btn-block qbutton' {{action 'toggleUpdate' question}}>Update</button>
+    <button class='btn btn-block qbutton' {{action 'deleteQuestion' question}}>Delete</button>
+    <button class='btn btn-block qbutton' {{action 'toggleAnswer' question}}>Answer</button>
+    <button class='btn btn-block qbutton' {{action 'showDetails' question}}>More</button>
+
+  </div>
+  <div class="col-md-8">
+    <p>Question: {{question.question}} </p>
+    <p>-{{question.author}}</p>
+    {{#if showDetails}}
+    {{answer-tile question=question answers=answers toggleAnswer='toggleAnswer' deleteAnswer='deleteAnswer'}}
+    {{/if}}
+  </div>
 </div>
-  <button class='btn' {{action 'switchToUpdate' question}}>Update</button>
-  <button class='btn' {{action 'deleteQuestion' question}}>Delete</button>
-  {{#if showDetails}}
-  {{answer-tile question=question answers=answers toggleAnswer='toggleAnswer' deleteAnswer='deleteAnswer'}}
-  <hr>
-  {{/if}}
+<hr>

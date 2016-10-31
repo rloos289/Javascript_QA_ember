@@ -9,6 +9,9 @@ export default Ember.Component.extend({
         comment: this.get('comment')
       };
       this.sendAction('updateQuestion', params);
+    },
+    newQuestion(){
+      this.sendAction('newQuestion');
     }
   }
 });

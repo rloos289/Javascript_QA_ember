@@ -1,8 +1,13 @@
 <p>Comment: {{question.comment}}</p>
+<hr>
 {{#each question.answers as |answer|}}
-<p>Answer: {{answer.answer}}</p>
-<p>Author: {{answer.author}}</p>
-<button class='btn' {{action 'deleteAnswer' answer}}>Delete Answer</button>
-<p>_______________________________________________________</p>
+<div class='col-md-10'>
+  <p>Answer: {{answer.answer}}</p>
+  <p>-{{answer.author}}</p>
+</div>
+<div class='col-md-2'>
+  <button class='btn' {{action 'deleteAnswer' answer}}>X</button>
+</div>
+<hr>
 {{/each}}
-<button class='btn' {{action 'toggleAnswer' question}}>Answer Question</button>
+{{!-- <button class='btn' {{action 'toggleAnswer' question}}>Answer Question</button> --}}

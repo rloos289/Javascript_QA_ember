@@ -10,6 +10,9 @@ export default Ember.Component.extend({
       this.sendAction('addAnswer', params);
       this.set('answer', '');
       this.set('author', '');
+    },
+    newQuestion(){
+      this.sendAction('newQuestion');
     }
   }
 });

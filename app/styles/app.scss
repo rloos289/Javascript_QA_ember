@@ -7,4 +7,24 @@ body {
   #disclaimer {
     text-align: right;
   }
+
+  h2 {
+    text-align: center;
+  }
+
+  .forms {
+    display: none;
+  }
+}
+
+.author {
+  float: right;
+}
+
+.qbutton {
+  margin: 4px;
+}
+
+.btn {
+  text-align: center;
 }
