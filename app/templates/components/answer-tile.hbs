@@ -4,15 +4,21 @@
 <div class='col-md-9'>
   <p>Answer: {{answer.answer}}</p>
   <p>-{{answer.author}}</p>
-  <p>{{answer-rating answer}}</p>
-</div>
-<div class='col-md-3'>
-  <button class='btn' {{action 'deleteAnswer' answer}}>X</button>
-  <span class="glyphicon glyphicon-star-empty estar" {{action 'rateAnswer' 1 answer}}></span>
+  <p>Average Rating: {{answer-rating answer}}</p>
+<p>Rate this answer:</p> <span class="glyphicon glyphicon-star-empty estar" {{action 'rateAnswer' 1 answer}}></span>
   <span class="glyphicon glyphicon-star-empty estar" {{action 'rateAnswer' 2 answer}}></span>
   <span class="glyphicon glyphicon-star-empty estar" {{action 'rateAnswer' 3 answer}}></span>
   <span class="glyphicon glyphicon-star-empty estar" {{action 'rateAnswer' 4 answer}}></span>
   <span class="glyphicon glyphicon-star-empty estar" {{action 'rateAnswer' 5 answer}}></span>
+  <span class="glyphicon glyphicon-star-empty estar" {{action 'rateAnswer' 6 answer}}></span>
+  <span class="glyphicon glyphicon-star-empty estar" {{action 'rateAnswer' 7 answer}}></span>
+  <span class="glyphicon glyphicon-star-empty estar" {{action 'rateAnswer' 8 answer}}></span>
+  <span class="glyphicon glyphicon-star-empty estar" {{action 'rateAnswer' 9 answer}}></span>
+  <span class="glyphicon glyphicon-star-empty estar" {{action 'rateAnswer' 10 answer}}></span>
+</div>
+<div class='col-md-3'>
+  <button class='btn' {{action 'deleteAnswer' answer}}>X</button>
+
 
   <!-- <span class="glyphicon glyphicon-star "></span> -->
 </div>
