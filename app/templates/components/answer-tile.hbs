@@ -4,10 +4,10 @@
 <div class='col-md-9'>
   <p>Answer: {{answer.answer}}</p>
   <p>-{{answer.author}}</p>
+  <p>{{answer-rating answer}}</p>
 </div>
 <div class='col-md-3'>
   <button class='btn' {{action 'deleteAnswer' answer}}>X</button>
-  <button class='btn' {{action 'rateAnswer' answer}}>rate</button>
   <span class="glyphicon glyphicon-star-empty estar" {{action 'rateAnswer' 1 answer}}></span>
   <span class="glyphicon glyphicon-star-empty estar" {{action 'rateAnswer' 2 answer}}></span>
   <span class="glyphicon glyphicon-star-empty estar" {{action 'rateAnswer' 3 answer}}></span>
