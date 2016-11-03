@@ -1,11 +1,16 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  model(){
-    return Ember.RSVP.hash({
+  model: function(params) {
+    if (!$.isEmptyObject(params)) {
+      var answer = this.store.findRecord('answer',params.answer_id);
+    }
+    var model = Ember.RSVP.hash({
     question: this.store.findAll('question'),
     answers: this.store.findAll('answer'),
+    answer: answer
   });
+    return model
 },
   actions: {
     saveQuestion(params) {
@@ -34,5 +39,17 @@ export default Ember.Route.extend({
       answer.destroyRecord();
       this.transitionTo('index');
     },
+    saveRating(rating, answer) {
+      console.log(rating);
+      // var currentAnswer = this.store.findRecord('answers', answer.answer_id);
+      // console.log(this.model(function('answer'));
+    },
   }
 });
+
+//
+// saveQuestion(params) {
+//   var newQuestion = this.store.createRecord('question', params);
+//   newQuestion.save();
+//   this.transitionTo('index');
+// },
