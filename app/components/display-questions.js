@@ -44,6 +44,9 @@ export default Ember.Component.extend({
       Ember.RSVP.all(answer_deletions).then(function() {
         return question.destroyRecord();
       });
-    }
+    },
+    saveRating(rating, answer) {
+      this.sendAction('saveRating',rating, answer);
+    },
   }
 });

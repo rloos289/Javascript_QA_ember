@@ -18,5 +18,8 @@ export default Ember.Component.extend({
     showDetails(question) {
       this.toggleProperty('showDetails', question);
     },
+    saveRating(rating, answer) {
+      this.sendAction('saveRating',rating, answer);
+    },
   }
 });

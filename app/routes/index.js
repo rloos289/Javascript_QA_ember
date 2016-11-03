@@ -34,5 +34,9 @@ export default Ember.Route.extend({
       answer.destroyRecord();
       this.transitionTo('index');
     },
+    saveRating(rating, answer) {
+      console.log(rating);
+      console.log(answer);
+    },
   }
 });
