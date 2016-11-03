@@ -1,13 +1,20 @@
 <p>Comment: {{question.comment}}</p>
 <hr>
 {{#each question.answers as |answer|}}
-<div class='col-md-10'>
+<div class='col-md-9'>
   <p>Answer: {{answer.answer}}</p>
   <p>-{{answer.author}}</p>
 </div>
-<div class='col-md-2'>
+<div class='col-md-3'>
   <button class='btn' {{action 'deleteAnswer' answer}}>X</button>
+  <button class='btn' {{action 'rateAnswer' answer}}>rate</button>
+  <span class="glyphicon glyphicon-star-empty estar" {{action 'rateAnswer' 1}}></span>
+  <span class="glyphicon glyphicon-star-empty estar" {{action 'rateAnswer' 2}}></span>
+  <span class="glyphicon glyphicon-star-empty estar" {{action 'rateAnswer' 3}}></span>
+  <span class="glyphicon glyphicon-star-empty estar" {{action 'rateAnswer' 4}}></span>
+  <span class="glyphicon glyphicon-star-empty estar" {{action 'rateAnswer' 5}}></span>
+
+  <!-- <span class="glyphicon glyphicon-star "></span> -->
 </div>
 <hr>
 {{/each}}
-{{!-- <button class='btn' {{action 'toggleAnswer' question}}>Answer Question</button> --}}
