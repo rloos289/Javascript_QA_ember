@@ -35,8 +35,10 @@ export default Ember.Route.extend({
       this.transitionTo('index');
     },
     saveRating(rating, answer) {
-      console.log(rating);
-      console.log(answer);
+      answer.set('rating',rating);
+      console.log(answer.get('rating'));
+      answer.save();
+      this.transitionTo('index');
     },
   }
 });
