@@ -41,7 +41,7 @@ export default Ember.Route.extend({
     },
     saveRating(rating, answer) {
       console.log(rating);
-      // var currentAnswer = this.store.findRecord('answers', answer.answer_id);
+      var currentAnswer = this.store.findRecord('answers', answer.answer_id);
       // console.log(this.model(function('answer'));
     },
   }
