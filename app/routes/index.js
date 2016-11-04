@@ -35,8 +35,9 @@ export default Ember.Route.extend({
       this.transitionTo('index');
     },
     saveRating(rating, answer) {
-      answer.set('rating',rating);
+      answer.get('rating').pushObject(rating);
       answer.save();
+      var newAverage = (answer.get('rating').reduce(function(a, b) { return a + b; }, 0))/(answer.get('rating').length - 1); //-1 because ratings array is pre-seeded with 0
       this.transitionTo('index');
     },
   }

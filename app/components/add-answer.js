@@ -6,7 +6,7 @@ export default Ember.Component.extend({
        params = {
         answer: this.get('answer'),
         author: this.get('author'),
-        rating: null,
+        rating: [0],
       };
       if (!params.answer || !params.author) {
         alert('please fill all fields');

@@ -4,8 +4,6 @@ export default Ember.Component.extend({
   sortBy: ['rating:desc'],
   sortedReviews: Ember.computed.sort('question.answers','sortBy'),
   showDetails: false,
-  ratings: [],
-  rating: 0,
   actions: {
     toggleAnswer(question) {
       this.sendAction('toggleAnswer', question);
@@ -17,11 +15,8 @@ export default Ember.Component.extend({
       this.toggleProperty('showDetails', question);
     },
     rateAnswer(rating, answer) {
-      var newRating = parseInt(rating);
-      this.ratings.push(newRating);
-      var newAverage = ((this.ratings).reduce(function(a, b) { return a + b; }, 0))/(this.ratings.length);
-      this.set('rating', newAverage);
-      this.sendAction('saveRating', this.rating, answer);
+      var rating = parseInt(rating);
+      this.sendAction('saveRating', rating, answer);
     }
   }
 });
