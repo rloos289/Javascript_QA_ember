@@ -1,3 +1,7 @@
 {{#each questions as |question|}}
   {{question-tile question=question answers=answers toggleAnswer='toggleAnswer' deleteAnswer='deleteAnswer' toggleUpdate='toggleUpdate' deleteQuestion='deleteQuestion' saveRating='saveRating'}}
 {{/each}}
+
+<button {{action 'showModal' 'welcome-dialog' target=modals}}>
+  Show welcome
+</button>

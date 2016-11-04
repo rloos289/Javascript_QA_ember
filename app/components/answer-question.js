@@ -20,5 +20,13 @@ export default Ember.Component.extend({
     saveRating(rating, answer) {
       this.sendAction('saveRating',rating, answer);
     },
-  }
+    showModal() {
+      this.modals.send('showModal', {
+        componentName: 'my-welcome-dialog',
+        context: this,
+        modalClassName: 'welcome-modal',
+        overlayClassName: 'overlay-transparent',
+        showCloseButton: true,
+    }
+  },
 });
