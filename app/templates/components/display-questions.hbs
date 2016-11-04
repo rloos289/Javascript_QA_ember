@@ -13,3 +13,10 @@
     {{/if}}
   </div>
 </div>
+
+{{log favoriteQuestions}}
+
+  {{#each favoriteQuestions.questions as |favorite|}}
+    <p>{{favorite.question}}</p>
+    test
+  {{/each}}

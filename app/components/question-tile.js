@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  favoriteQuestions: Ember.inject.service(),
   showDetails: false,
   actions: {
     toggleUpdate(question) {
@@ -20,6 +21,9 @@ export default Ember.Component.extend({
     },
     saveRating(rating, answer) {
       this.sendAction('saveRating',rating, answer);
+    },
+    addToFavorite(question) {
+      this.get('favoriteQuestions').add(question);
     },
   }
 });
