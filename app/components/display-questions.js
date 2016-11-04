@@ -6,6 +6,7 @@ export default Ember.Component.extend({
   toggleUpdate: false,
   toggleAnswer: false,
   toggleQuestion: false,
+  toggleFavorites: false,
   modalShowing: false,
   actions: {
     newQuestion(){
@@ -67,5 +68,12 @@ export default Ember.Component.extend({
     closeModalDialog() {
       this.set('modalShowing', false);
     },
+    toggleFavorites() {
+      this.set('toggleAnswer', false);
+      this.set('toggleUpdate', false);
+      this.set('toggleQuestion', false);
+      this.set('toggleFavorites', true)
+      this.set('modalShowing', true);
+    }
   }
 });

@@ -1,7 +1,8 @@
 <div class="row">
   <div class="col-md-12">
-    <h2>Questions</h2>
     <button class="btn-lg pull-right" {{action "newQuestion"}}>New Question</button>
+    <button class='btn-lg pull-right' {{action "toggleFavorites"}}>Show Favorites</button>
+    <h2>Questions</h2>
     {{answer-question questions=questions answers=answers toggleUpdate='toggleUpdate' toggleAnswer='toggleAnswer' deleteAnswer='deleteAnswer' deleteQuestion='deleteQuestion' saveRating='saveRating'}}
   </div>
 </div>
@@ -13,10 +14,10 @@
     {{add-answer addAnswer='addAnswer' newQuestion='newQuestion'}}
   {{else if toggleQuestion}}
     {{add-question saveQuestion='saveQuestion' newQuestion='newQuestion'}}
+  {{else if toggleFavorites}}
+    {{#each favoriteQuestions.questions as |favorite|}}
+      <p>{{favorite.question}}</p>
+    {{/each}}
   {{/if}}
   {{/modal-dialog}}
 {{/if}}
-
-  {{#each favoriteQuestions.questions as |favorite|}}
-    <p>{{favorite.question}}</p>
-  {{/each}}
