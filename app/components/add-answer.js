@@ -8,9 +8,13 @@ export default Ember.Component.extend({
         author: this.get('author'),
         rating: null,
       };
-      this.sendAction('addAnswer', params);
-      this.set('answer', '');
-      this.set('author', '');
+      if (!params.answer || !params.author) {
+        alert('please fill all fields');
+      } else {
+        this.sendAction('addAnswer', params);
+        this.set('answer', '');
+        this.set('author', '');
+      }
     },
     newQuestion(){
       this.sendAction('newQuestion');

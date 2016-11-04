@@ -8,10 +8,14 @@ export default Ember.Component.extend({
         author: this.get('author'),
         comment: this.get('comment')
       };
-      this.sendAction('saveQuestion', params);
-      this.set('question','');
-      this.set('author','');
-      this.set('comment','');
+      if (!params.question || !params.author || !params.comment) {
+        alert('please fill all fields');
+      } else {
+        this.sendAction('saveQuestion', params);
+        this.set('question','');
+        this.set('author','');
+        this.set('comment','');
+      }
     }
   }
 });
