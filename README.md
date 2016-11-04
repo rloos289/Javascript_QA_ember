@@ -1,6 +1,6 @@
 # Q-A
 
-A simple question and answer board 
+A simple question and answer board
 
 ## Prerequisites
 
@@ -18,11 +18,6 @@ You will need the following things properly installed on your computer.
 * `cd q-a`
 * `npm install`
 * `bower install`
-* `ember install ember-bootstrap`
-* `ember install emberfire`
-* `ember install ember-cli-sass`
-* `ember install ember-bootstrap`
-
 
 ## Running / Development
 

@@ -1,6 +1,6 @@
 <p>Comment: {{question.comment}}</p>
 <hr>
-{{#each question.answers as |answer|}}
+{{#each sortedReviews as |answer|}}
 <div class='col-md-9'>
   <p>Answer: {{answer.answer}}</p>
   <p>-{{answer.author}}</p>
