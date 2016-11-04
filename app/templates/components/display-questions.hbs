@@ -1,20 +1,22 @@
 <div class="row">
-  <div class="col-md-6">
+  <div class="col-md-12">
     <h2>Questions</h2>
     {{answer-question questions=questions answers=answers toggleUpdate='toggleUpdate' toggleAnswer='toggleAnswer' deleteAnswer='deleteAnswer' deleteQuestion='deleteQuestion' saveRating='saveRating'}}
   </div>
-  <div class="col-md-6 form">
-    {{#if toggleUpdate}}
-      {{update-question currentQuestion=currentQuestion newQuestion='newQuestion' updateQuestion='updateQuestion'}}
-    {{else if toggleAnswer}}
-      {{add-answer addAnswer='addAnswer' newQuestion='newQuestion'}}
-    {{else}}
-      {{add-question saveQuestion='saveQuestion' newQuestion='newQuestion'}}
-    {{/if}}
-  </div>
 </div>
+
+{{#if modalShowing}}
+  {{#modal-dialog translucentOverlay=true clickOutsideToClose=true close='closeModalDialog'}}
+  {{#if toggleUpdate}}
+    {{update-question currentQuestion=currentQuestion newQuestion='newQuestion' updateQuestion='updateQuestion'}}
+  {{else if toggleAnswer}}
+    {{add-answer addAnswer='addAnswer' newQuestion='newQuestion'}}
+  {{else}}
+    {{add-question saveQuestion='saveQuestion' newQuestion='newQuestion'}}
+  {{/if}}
+  {{/modal-dialog}}
+{{/if}}
 
   {{#each favoriteQuestions.questions as |favorite|}}
     <p>{{favorite.question}}</p>
-    test
   {{/each}}

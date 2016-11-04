@@ -5,6 +5,7 @@ export default Ember.Component.extend({
   currentQuestion: null,
   toggleUpdate: false,
   toggleAnswer: false,
+  modalShowing: false,
   actions: {
     newQuestion(){
       this.set('toggleAnswer', false);
@@ -18,6 +19,7 @@ export default Ember.Component.extend({
       this.toggleProperty('toggleUpdate');
       this.set('currentQuestion', question);
       this.set('toggleAnswer', false);
+      this.set('modalShowing', true);
     },
     updateQuestion(params) {
       this.sendAction('updateQuestion', this.currentQuestion, params);
@@ -28,6 +30,7 @@ export default Ember.Component.extend({
       this.toggleProperty('toggleAnswer');
       this.set('currentQuestion', question);
       this.set('toggleUpdate', false);
+      this.set('modalShowing', true);
     },
     addAnswer(params) {
       // this.set('currentAnswer', answer);
@@ -48,6 +51,9 @@ export default Ember.Component.extend({
     },
     saveRating(rating, answer) {
       this.sendAction('saveRating',rating, answer);
+    },
+    closeModalDialog() {
+      this.set('modalShowing', false);
     },
   }
 });

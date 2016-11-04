@@ -1,3 +1,6 @@
+@import "ember-modal-dialog/ember-modal-structure";
+@import "ember-modal-dialog/ember-modal-appearance";
+
 body {
   font-family: 'Josefin Slab', serif;
   .pagetitle {
@@ -27,4 +30,9 @@ body {
 
 .btn {
   text-align: center;
+}
+
+.ember-modal-dialog {
+  width: 430px;
+  height: 400px;
 }

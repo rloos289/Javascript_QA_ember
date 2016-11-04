@@ -4,9 +4,11 @@ export default Ember.Component.extend({
   actions: {
     toggleUpdate(question) {
       this.sendAction('toggleUpdate', question);
+      this.sendAction('openModalDialog');
     },
     toggleAnswer(question) {
       this.sendAction('toggleAnswer', question);
+      this.sendAction('openModalDialog');
     },
     deleteAnswer(answer) {
       this.sendAction('deleteAnswer', answer);
