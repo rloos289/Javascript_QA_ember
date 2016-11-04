@@ -27,8 +27,14 @@ export default Ember.Component.extend({
       this.set('modalShowing', true);
     },
     updateQuestion(params) {
-      this.sendAction('updateQuestion', this.currentQuestion, params);
-      this.set('toggleUpdate', false);
+      if (
+        !this.currentQuestion.get('question') || !this.currentQuestion.get('author') || !this.currentQuestion.get('comment')
+      ) {
+        alert('please fill all fields');
+      } else {
+        this.sendAction('updateQuestion', this.currentQuestion, params);
+        this.set('toggleUpdate', false);
+      }
     },
     //manage answers
     toggleAnswer(question) {
