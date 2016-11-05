@@ -8,7 +8,9 @@ export default Ember.Component.extend({
   toggleQuestion: false,
   toggleFavorites: false,
   modalShowing: false,
+  showDetails: false,
   actions: {
+    //manage questions
     newQuestion(){
       this.set('toggleAnswer', false);
       this.set('toggleUpdate', false);
@@ -21,16 +23,14 @@ export default Ember.Component.extend({
     },
     //manage updates
     toggleUpdate(question) {
-      this.toggleProperty('toggleUpdate');
+      this.set('toggleUpdate', true);
       this.set('currentQuestion', question);
       this.set('toggleQuestion', false);
       this.set('toggleAnswer', false);
       this.set('modalShowing', true);
     },
     updateQuestion(params) {
-      if (
-        !this.currentQuestion.get('question') || !this.currentQuestion.get('author') || !this.currentQuestion.get('comment')
-      ) {
+      if (!this.currentQuestion.get('question') || !this.currentQuestion.get('author')) {
         alert('please fill all fields');
       } else {
         this.sendAction('updateQuestion', this.currentQuestion, params);
@@ -39,7 +39,7 @@ export default Ember.Component.extend({
     },
     //manage answers
     toggleAnswer(question) {
-      this.toggleProperty('toggleAnswer');
+      this.set('toggleAnswer', true);
       this.set('currentQuestion', question);
       this.set('toggleQuestion', false);
       this.set('toggleUpdate', false);
@@ -55,8 +55,8 @@ export default Ember.Component.extend({
       this.sendAction('deleteAnswer', answer);
     },
     deleteQuestion(question) {
-      var answer_deletions = question.get('answers').map(function(comment) {
-        return comment.destroyRecord();
+      var answer_deletions = question.get('answers').map(function(question) {
+        return question.destroyRecord();
       });
       Ember.RSVP.all(answer_deletions).then(function() {
         return question.destroyRecord();
@@ -74,6 +74,10 @@ export default Ember.Component.extend({
       this.set('toggleQuestion', false);
       this.set('toggleFavorites', true)
       this.set('modalShowing', true);
-    }
+    },
+    showDetails(question) {
+      this.toggleProperty('showDetails', question);
+      this.set('currentQuestion', question)
+    },
   }
 });

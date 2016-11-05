@@ -1,9 +1,17 @@
 <div class="row">
-  <div class="col-md-12">
-    <button class="btn-lg pull-right" {{action "newQuestion"}}>New Question</button>
-    <button class='btn-lg pull-right' {{action "toggleFavorites"}}>Show Favorites</button>
+  <div class="col-md-6">
     <h2>Questions</h2>
-    {{answer-question questions=questions answers=answers toggleUpdate='toggleUpdate' toggleAnswer='toggleAnswer' deleteAnswer='deleteAnswer' deleteQuestion='deleteQuestion' saveRating='saveRating'}}
+    {{answer-question questions=questions answers=answers toggleUpdate='toggleUpdate' toggleAnswer='toggleAnswer' deleteAnswer='deleteAnswer' deleteQuestion='deleteQuestion' saveRating='saveRating' showDetails='showDetails'}}
+  </div>
+  <div class="col-md-6">
+    {{#if showDetails}}
+      <h2>Answers</h2>
+      {{answer-tile question=currentQuestion answers=answers toggleAnswer='toggleAnswer' deleteAnswer='deleteAnswer' saveRating='saveRating'}}
+    {{else}}
+      <h2>Options</h2>
+      <button class="btn-lg btn-block" {{action "newQuestion"}}>New Question</button>
+      <button class='btn-lg btn-block' {{action "toggleFavorites"}}>Show Favorites</button>
+    {{/if}}
   </div>
 </div>
 {{#if modalShowing}}
@@ -15,9 +23,20 @@
   {{else if toggleQuestion}}
     {{add-question saveQuestion='saveQuestion' newQuestion='newQuestion'}}
   {{else if toggleFavorites}}
+
+  {{#if favoriteQuestions.questions}}
+    <h2>Favorite Questions</h2>
     {{#each favoriteQuestions.questions as |favorite|}}
-      <p>{{favorite.question}}</p>
+      <p>-{{favorite.question}}</p>
+      <hr>
     {{/each}}
+  {{else}}
+    <p>You haven't liked any questions yet!</p>
+  {{/if}}
+
+
+
+
   {{/if}}
   {{/modal-dialog}}
 {{/if}}

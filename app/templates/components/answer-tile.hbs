@@ -1,5 +1,4 @@
-<p>Comment: {{question.comment}}</p>
-<hr>
+{{#if question.answers}}
 {{#each sortedReviews as |answer|}}
 <div class='col-md-9'>
   <p>Answer: {{answer.answer}}</p>
@@ -18,9 +17,9 @@
 </div>
 <div class='col-md-3'>
   <button class='btn' {{action 'deleteAnswer' answer}}>X</button>
-
-
-  <!-- <span class="glyphicon glyphicon-star "></span> -->
 </div>
 <hr>
 {{/each}}
+{{else}}
+  <h3>No one has answered this question yet. Be the first to answer!</h3>
+{{/if}}

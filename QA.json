@@ -1,15 +1,12 @@
 {
    "questions": [{
-    "question": "What is the airspeed velocity of an unladen swallow?",
-    "author": "Monty",
-    "comment": "African or European?"
+    "question": "What is the airspeed velocity of an unladen swallow? And furthermore how far can it fly without exausting itself? Surely such a small creature must make regular rests especially if it carries something as large as a bloody coconut. Assuming you aren't talking about some silly tiny coconut",
+    "author": "Monty"
   }, {
     "question": "Do ya feel lucky punk? Well do yah?",
-    "author": "Clint",
-    "comment": "Imma shoot you"
+    "author": "Clint"
   }, {
     "question": "Aren't you a little short for a stormtrooper?",
-    "author": "Leah",
-    "comment": "I ain't no stormtrooper"
+    "author": "Leah"
   }]
 }

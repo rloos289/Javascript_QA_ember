@@ -16,11 +16,11 @@ export default Ember.Component.extend({
     deleteQuestion(question) {
       this.sendAction('deleteQuestion', question);
     },
-    showDetails(question) {
-      this.toggleProperty('showDetails', question);
-    },
     saveRating(rating, answer) {
       this.sendAction('saveRating',rating, answer);
+    },
+    showDetails(question) {
+      this.sendAction('showDetails', question);
     },
   }
 });

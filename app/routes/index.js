@@ -35,9 +35,10 @@ export default Ember.Route.extend({
       this.transitionTo('index');
     },
     saveRating(rating, answer) {
-      answer.get('rating').pushObject(rating);
-      answer.save();
-      var newAverage = (answer.get('rating').reduce(function(a, b) { return a + b; }, 0))/(answer.get('rating').length - 1); //-1 because ratings array is pre-seeded with 0
+      answer.get('ratings').pushObject(rating);
+      var newAverage = (answer.get('ratings').reduce(function(a, b) { return a + b; }, 0))/(answer.get('ratings').length - 1); //-1 because ratings array is pre-seeded with a 0
+      answer.set('rating', newAverage);
+      answer.save()
       this.transitionTo('index');
     },
   }

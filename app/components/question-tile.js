@@ -2,7 +2,6 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   favoriteQuestions: Ember.inject.service(),
-  showDetails: false,
   actions: {
     toggleUpdate(question) {
       this.sendAction('toggleUpdate', question);
@@ -19,7 +18,7 @@ export default Ember.Component.extend({
       this.sendAction('deleteQuestion', question);
     },
     showDetails(question) {
-      this.toggleProperty('showDetails', question);
+      this.sendAction('showDetails', question);
     },
     saveRating(rating, answer) {
       this.sendAction('saveRating',rating, answer);
@@ -27,8 +26,5 @@ export default Ember.Component.extend({
     addToFavorite(question) {
       this.get('favoriteQuestions').add(question);
     },
-    // openModalDialog() {
-    //   this.sendAction('openModalDialog');
-    // }
   }
 });
