@@ -6,12 +6,8 @@
   <div class="col-md-12">
     <button class='btn qbutton' {{action 'toggleUpdate' question}} >Update</button>
     <button class='btn qbutton' {{action 'deleteQuestion' question}}>Delete</button>
-    <button class='btn qbutton' {{action 'toggleAnswer' question}}>Answer</button>
-    <button class='btn qbutton' {{action 'showDetails' question}}>More</button>
-    <button class='btn qbutton' {{action 'addToFavorite' question}}>Like</button>
+    <button class='btn qbutton' {{action 'showDetails' question}}>Show Answers</button>
+    <button class='btn qbutton' {{action 'addToFavorite' question}}>Favorite</button>
+    <hr>
   </div>
-    {{!-- {{#if showDetails}}
-    {{answer-tile question=question answers=answers toggleAnswer='toggleAnswer' deleteAnswer='deleteAnswer' saveRating='saveRating'}}
-    {{/if}} --}}
 </div>
-<hr>

@@ -8,7 +8,6 @@ export default Ember.Component.extend({
   toggleQuestion: false,
   toggleFavorites: false,
   modalShowing: false,
-  showDetails: false,
   actions: {
     //manage questions
     newQuestion(){
@@ -46,7 +45,6 @@ export default Ember.Component.extend({
       this.set('modalShowing', true);
     },
     addAnswer(params) {
-      // this.set('currentAnswer', answer);
       this.sendAction('addAnswer', this.currentQuestion, params);
       this.set('toggleAnswer', false);
     },
@@ -76,8 +74,10 @@ export default Ember.Component.extend({
       this.set('modalShowing', true);
     },
     showDetails(question) {
-      this.toggleProperty('showDetails', question);
       this.set('currentQuestion', question)
     },
+    backToWelcome() {
+      this.set('currentQuestion', null);
+    }
   }
 });

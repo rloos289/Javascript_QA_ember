@@ -4,14 +4,18 @@
     {{answer-question questions=questions answers=answers toggleUpdate='toggleUpdate' toggleAnswer='toggleAnswer' deleteAnswer='deleteAnswer' deleteQuestion='deleteQuestion' saveRating='saveRating' showDetails='showDetails'}}
   </div>
   <div class="col-md-6">
-    {{#if showDetails}}
-      <h2>Answers</h2>
-      {{answer-tile question=currentQuestion answers=answers toggleAnswer='toggleAnswer' deleteAnswer='deleteAnswer' saveRating='saveRating'}}
-    {{else}}
-      <h2>Options</h2>
-      <button class="btn-lg btn-block" {{action "newQuestion"}}>New Question</button>
-      <button class='btn-lg btn-block' {{action "toggleFavorites"}}>Show Favorites</button>
-    {{/if}}
+      {{#if currentQuestion}}
+        <h2>Answers <button class='btn pull-right' {{action 'backToWelcome'}}>Home</button></h2>
+        {{answer-tile question=currentQuestion answers=answers toggleAnswer='toggleAnswer'  deleteAnswer='deleteAnswer' saveRating='saveRating'}}
+      {{else}}
+        <h2>Welcome</h2>
+        <div class="text-align center">
+          <h3>Ask the Interwebs allows you to ask the collective wisdom of the internet for answers to your most burning questions. We promise that the interactions you will have here will at least be better than your average Youtube comments section.</h3>
+          <br>
+          <button class="btn-lg btn-block" {{action "newQuestion"}}>New Question</button>
+          <button class='btn-lg btn-block' {{action "toggleFavorites"}}>Show Favorites</button>
+        </div>
+      {{/if}}
   </div>
 </div>
 {{#if modalShowing}}
@@ -23,20 +27,15 @@
   {{else if toggleQuestion}}
     {{add-question saveQuestion='saveQuestion' newQuestion='newQuestion'}}
   {{else if toggleFavorites}}
-
-  {{#if favoriteQuestions.questions}}
-    <h2>Favorite Questions</h2>
-    {{#each favoriteQuestions.questions as |favorite|}}
-      <p>-{{favorite.question}}</p>
-      <hr>
-    {{/each}}
-  {{else}}
-    <p>You haven't liked any questions yet!</p>
-  {{/if}}
-
-
-
-
+    {{#if favoriteQuestions.questions}}
+      <h2>Favorite Questions</h2>
+      {{#each favoriteQuestions.questions as |favorite|}}
+        <p>-{{favorite.question}}</p>
+        <hr>
+      {{/each}}
+    {{else}}
+      <p>You haven't liked any questions yet!</p>
+    {{/if}}
   {{/if}}
   {{/modal-dialog}}
 {{/if}}

@@ -1,11 +1,14 @@
 @import "ember-modal-dialog/ember-modal-structure";
 @import "ember-modal-dialog/ember-modal-appearance";
 
+$thisBlue: #1975C7;
+
 body {
   font-family: 'Josefin Slab', serif;
   .pagetitle {
     text-align: center;
     font-family: 'Raleway', sans-serif;
+    color: $thisBlue
   }
   #disclaimer {
     text-align: right;
@@ -35,4 +38,12 @@ body {
 .ember-modal-dialog {
   width: 430px;
   height: 400px;
+}
+
+.estar:hover {
+  color: $thisBlue;
+}
+
+h4 {
+  font-weight: bold;
 }

@@ -1,25 +1,31 @@
 {{#if question.answers}}
+<h4>{{question.question}}</h4>
+  <button class='btn abutton' {{action 'toggleAnswer' question}}>Add Answer</button>
+<hr>
 {{#each sortedReviews as |answer|}}
-<div class='col-md-9'>
-  <p>Answer: {{answer.answer}}</p>
-  <p>-{{answer.author}}</p>
-  <p>Average Rating: {{answer-rating answer}}</p>
-<p>Rate this answer:</p> <span class="glyphicon glyphicon-star-empty estar" {{action 'rateAnswer' 1 answer}}></span>
-  <span class="glyphicon glyphicon-star-empty estar" {{action 'rateAnswer' 2 answer}}></span>
-  <span class="glyphicon glyphicon-star-empty estar" {{action 'rateAnswer' 3 answer}}></span>
-  <span class="glyphicon glyphicon-star-empty estar" {{action 'rateAnswer' 4 answer}}></span>
-  <span class="glyphicon glyphicon-star-empty estar" {{action 'rateAnswer' 5 answer}}></span>
-  <span class="glyphicon glyphicon-star-empty estar" {{action 'rateAnswer' 6 answer}}></span>
-  <span class="glyphicon glyphicon-star-empty estar" {{action 'rateAnswer' 7 answer}}></span>
-  <span class="glyphicon glyphicon-star-empty estar" {{action 'rateAnswer' 8 answer}}></span>
-  <span class="glyphicon glyphicon-star-empty estar" {{action 'rateAnswer' 9 answer}}></span>
-  <span class="glyphicon glyphicon-star-empty estar" {{action 'rateAnswer' 10 answer}}></span>
-</div>
-<div class='col-md-3'>
-  <button class='btn' {{action 'deleteAnswer' answer}}>X</button>
+<div class="row">
+    <div class="col-md-8">
+      <p>Answer: {{answer.answer}}</p>
+      <p>-{{answer.author}}</p>
+      <button class='btn' {{action 'deleteAnswer' answer}}>Delete Answer</button>
+    </div>
+    <div class="col-md-4">
+      <p>Rating: {{answer-rating answer}}</p>
+      <p>({{answer.ratings.length}} total ratings)</p>
+      <p>Rate this answer:</p>
+        <span class="glyphicon glyphicon-star-empty estar" {{action 'rateAnswer' 1 answer}}></span>
+        <span class="glyphicon glyphicon-star-empty estar" {{action 'rateAnswer' 2 answer}}></span>
+        <span class="glyphicon glyphicon-star-empty estar" {{action 'rateAnswer' 3 answer}}></span>
+        <span class="glyphicon glyphicon-star-empty estar" {{action 'rateAnswer' 4 answer}}></span>
+        <span class="glyphicon glyphicon-star-empty estar" {{action 'rateAnswer' 5 answer}}></span>
+        <br>
+    </div>
 </div>
 <hr>
+
 {{/each}}
 {{else}}
   <h3>No one has answered this question yet. Be the first to answer!</h3>
+  <button class='btn qbutton' {{action 'toggleAnswer' question}}>Answer</button>
+
 {{/if}}
