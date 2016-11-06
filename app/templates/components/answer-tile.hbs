@@ -10,8 +10,8 @@
       <button class='btn' {{action 'deleteAnswer' answer}}>Delete Answer</button>
     </div>
     <div class="col-md-4">
-      <p>Rating: {{answer-rating answer}}</p>
-      <p>({{answer.ratings.length}} total ratings)</p>
+      <p>Rating: {{answer-rating answer.rating}}</p>
+      <p>({{total-ratings answer.ratings}} total ratings)</p>
       <p>Rate this answer:</p>
         <span class="glyphicon glyphicon-star-empty estar" {{action 'rateAnswer' 1 answer}}></span>
         <span class="glyphicon glyphicon-star-empty estar" {{action 'rateAnswer' 2 answer}}></span>

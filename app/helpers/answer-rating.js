@@ -1,10 +1,8 @@
 import Ember from 'ember';
 
-export function answerRating(params) {
-  var ratingAverage = params[0].get('rating');
-
+export function answerRating(rating) {
   var stars = "";
-  for (var i = 0; i < ratingAverage; i++) {
+  for (var i = 0; i < rating; i++) {
     stars += '<span class="glyphicon glyphicon-star "></span>'
   }
   return Ember.String.htmlSafe(stars);
